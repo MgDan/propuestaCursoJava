@@ -1,0 +1,124 @@
+
+**************  instalacion OpenJDK en windows 10.  ********************
+
+Descarga los binarios de la página oficial de OpenJDK:
+
+Pagina [[[ principal: https://openjdk.java.net/ ]]]
+Binario: [[[ https://jdk.java.net/11/ (o la version mas reciente) ]]]
+
+Se descomprime el archivo zip descargado.
+
+Clic derecho sobre el archivo y Extraer todo.
+
+Seleccionamos la ubicación donde queremos que quede los binarios del JDK. 
+por ejemplo: c:\\java.
+
+Se ha creado una carpeta llamada jdk-11.0.2. Debemos recordar esta ruta porque la configuraremos 
+en las variables de entorno.
+
+
+#####Creación de las variables de entorno.#####
+
+Se debe crear la variable de entorno JAVA\_HOME y se debe actualizar la variable de entorno PATH. 
+La primera se utilizará para que java sepa dónde se encuentra la instalación del JDK y la seguna es para poder ejecutar los comandos de java (como javac, java, etc) desde cualquier lugar.
+
+3.1. JAVA_HOME
+
+En la lupa de la barra de windows escribiremos: Editar las variables de entorno del sistema y 
+damos clic en la opción que nos da.
+
+Se abre la ventana de Propiedades del sistema y en la pestaña de Opciones avanzadas seleccionamos
+Variables de entorno.
+
+Podemos crear las variables de entorno para el usuario actual o para el sistema. 
+
+En el grupo de Variables del sistema seleccionamos el botón de Nueva...
+
+En el nombre escribiremos: JAVA\_HOME
+
+En el valor escribiremos la ruta donde se descomprimió el jdk, por ejemplo c:\\java\\jdk-11.0.2.
+Clic en aceptar. Ya debe aparecer esta variable en el grupo.
+3.2. PATH
+
+Si no tienes abierta la ventana de Variables de entorno abrela como se muestra en los dos primeros 
+items del punto anterior.
+
+En el grupo Variables del sistema ubica la variable Path, seleccionala y da clic en Editar...
+
+Podrás ver todos los valores de Path. No los modifiques o elimines!.
+
+Agrega un nuevo valor dando clic en el botón Nuevo y digitando la ruta de la instalación de java
+agregando la carpeta bin. En mi caso es: c:\\java\\jdk-11.0.2\\bin.
+
+Das clic en aceptar, luego en aceptar y luego nuevamente en aceptar.
+Ahora ya puedes abrir una consola dando clic en la lupa de la barra de windows, escribes cmd 
+y seleccionas simbolo del sistema. Cuando te aparezca, ya puedes confirmar que la instalación 
+ha quedado correcta digitando:
+
+java -version
+
+
+// ====== La salida debe ser algo como esto: =======
+
+
+// openjdk version "11.0.2" 2018-10-16
+// OpenJDK Runtime Environment 18.9 (build 11.0.2+7)
+// OpenJDK 64-Bit Server VM 18.9 (build 11.0.2+7, mixed mode)
+
+
+
+
+
+
+
+**************  Instalacion OpenJDK en Ubuntu y derivados **************
+
+Agregamos el PPA.
+
+sudo add-apt-repository ppa:openjdk-r/ppa
+
+Actualizamos.
+sudo apt update
+
+Ahora tenemos dos opciones de instalación, podemos instalar el paquete completo que es lo más común, o solo el paquete Java JRE. Todo depende de tus necesidades, nosotros contemplamos las dos opciones, tu eliges.
+1ª Opción – Instalamos el paquete completo.
+
+sudo apt install openjdk-11-jdk
+
+2ª Opción – Instalamos solo el paquete JRE.
+sudo apt install openjdk-11-jre
+
+Independientemente de la versión elegida, ahora puedes comprobar que la instalación fue un éxito con…
+java -version
+
+ejemplo de salida valido…
+openjdk version «11.0.1» 2018-10-16
+OpenJDK Runtime Environment (build 11.0.1+13-Ubuntu-3ubuntu118.04ppa1)
+OpenJDK 64-Bit Server VM (build 11.0.1+13-Ubuntu-3ubuntu118.04ppa1, mixed mode, sharing)
+
+
+
+************** Instalacion OpenJDK en Mac **************
+
+1. descargar el tar.gz de https://jdk.java.net/11/ (cambiar el numero por la version mas reciente)
+
+2. descomprimir el archivo
+
+
+
+3. Crear la carpeta "JavaVirtualMachine":
+
+    a. poscionarte con "terminal" en la carpeta donde se descomprimio el openjdk
+
+    b. teclear el comando "sudo mv <nombre De La Carpeta Descomprimida>/Library/Java/JavaVirtualMachine/"
+
+
+4.java -version
+
+ejemplo de salida valido…
+openjdk version «11.0.1» 2018-10-16
+OpenJDK Runtime Environment (build 11.0.1+13-Ubuntu-3ubuntu118.04ppa1)
+OpenJDK 64-Bit Server VM (build 11.0.1+13-Ubuntu-3ubuntu118.04ppa1, mixed mode, sharing)
+
+
+
